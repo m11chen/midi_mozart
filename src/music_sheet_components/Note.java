@@ -25,7 +25,6 @@ public class Note {
   public static int review_velocity;
   public static int ppq; // pulses (ticks) per quarter note.
 
-
   private ShortMessage start;
   private ShortMessage stop;
   private String name;

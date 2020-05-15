@@ -718,7 +718,7 @@ public class MainView extends JPanel implements FocusListener,
             };
 
         while (true) {
-          JDialog device_dialog = device_pane.createDialog("Select MIDI Device");
+          JDialog device_dialog = device_pane.createDialog("MIDI Device");
           device_dialog.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
           device_dialog.setVisible(true);
           int i;
@@ -802,7 +802,7 @@ public class MainView extends JPanel implements FocusListener,
         if (action == EDIT_LIBRARY_PATH) {
           options.put("Library Path", lib_path);
           options.put("Tree Expansion Buffer", Integer.toString(tree_expansion_buffer));
-          config_pane.setTitle("Enter Path to MIDI Library");
+          config_pane.setTitle("MIDI Library Options");
           config_pane.setOptions(options);
           Object[] choices = {"Refresh Library", "Cancel"};
           config_pane.setChoices(choices) ;
@@ -851,7 +851,7 @@ public class MainView extends JPanel implements FocusListener,
             return;
           } else if (staff != song.getStaffList().get(0)) {
             options = staff.getConfigOptions();
-            config_pane.setTitle("Edit Time Signature: "+staff.toString()+" - "+song.toString());
+            config_pane.setTitle("Time Signature: "+staff.toString()+" - "+song.toString());
             config_pane.setOptions(options);
             int i = config_pane.showDialog();
 
@@ -861,7 +861,7 @@ public class MainView extends JPanel implements FocusListener,
             }
           } else {
             options = song.getConfigOptions();
-            config_pane.setTitle("Edit Time Signature: "+song.toString());
+            config_pane.setTitle("Time Signature for "+song.toString());
             config_pane.setOptions(options);
             int i = config_pane.showDialog();
 
@@ -875,7 +875,7 @@ public class MainView extends JPanel implements FocusListener,
           options.put("Offset Buffer (milliseconds)", Integer.toString(Chord.offset_buffer));
           options.put("Review Velocity", Integer.toString(Note.review_velocity));
           options.put("Loop Count", Integer.toString(Staff.loop_count));
-          config_pane.setTitle("Edit Playback Options");
+          config_pane.setTitle("Playback Options");
           config_pane.setOptions(options);
           int i = config_pane.showDialog();
 
